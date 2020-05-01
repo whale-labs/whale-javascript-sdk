@@ -1,0 +1,16 @@
+/*
+ * @Author: lichao
+ * @Description:
+ * @Date: 2020-05-01 16:50:41
+ */
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "space-before-function-paren": "off",
+    "camelcase": "off",
+    "template-curly-spacing": "off",
+    "indent": "off",
+    "eqeqeq": "off",
+    "no-return-assign": "off"
+  }
+}
