@@ -6,7 +6,7 @@ import { errorLog, successLog } from "../printLog/index.js";
 import { lifecycle } from "../../configure/index.js";
 
 var postStatus = true;
-var sendType = "post";
+var sendType = "img";
 var rxDangerous = /[\u0000-\u001f\u007f-\u009f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
 
 function delRx(list) {
@@ -113,25 +113,7 @@ function sendPost(data, callback) {
       }
     };
   })(data);
-  // 不需要传后面的参数
-  // var url = baseConfig.base.uploadURL + "up?appid=" + baseConfig.base.appid;
-  var url = baseConfig.base.uploadURL;
-
-  // msg 包裹成chunnel接手的形式
-  if (
-    !baseConfig.base.appEvent ||
-    Util.paramType(baseConfig.base.appEvent) !== "String"
-  ) {
-    console.error("appEvent 参数必须填写");
-    return false;
-  }
-
-  // msg 包裹成chunnel接手的形式
-  msg = JSON.stringify({
-    Name: baseConfig.base.appEvent,
-    Data: msg,
-  });
-
+  var url = baseConfig.base.uploadURL + "up?appid=" + baseConfig.base.appid;
   var postMsg = {
     url: url,
     data: msg,
@@ -139,7 +121,7 @@ function sendPost(data, callback) {
     error: error,
   };
   successLog(
-    "Send message to server: " +
+    "[WhaleSDK] Send message to server: " +
       baseConfig.base.uploadURL +
       "up?appid=" +
       baseConfig.base.appid +
@@ -313,12 +295,7 @@ function checkSavaData(list) {
 
 function upLog(log, callback) {
   if (baseConfig.base.sendType) {
-    if (baseConfig.base.sendType !== "post") {
-      console.error(
-        `埋点数据上报方式暂时只支持post方式，当前为${baseConfig.base.sendType}`
-      );
-    }
-    sendType = "post";
+    sendType = baseConfig.base.sendType;
   }
 
   var upData = [];

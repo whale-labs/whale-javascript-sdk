@@ -1,3 +1,8 @@
+<!--
+ * @Author: lichao
+ * @Description: 
+ * @Date: 2020-04-29 15:19:06
+ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +14,6 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,10 +28,46 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <style>
+      .header {
+        background-color: #74bef0;
+        color: white;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .header h1 {
+        color: white;
+      }
+
+      .log-container {
+        margin: 64px;
+      }
+      #log {
+        overflow-wrap: break-word;
+        height: 200px;
+        overflow-y: scroll;
+      }
+    </style>
+    <title>Whale埋点SDK接入DEMO</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <header class="header">
+      <h1 class="text-center">Whale埋点SDK接入DEMO</h1>
+    </header>
+
+    <div class="log-container">
+      <div class="ant-card ant-card-bordered">
+        <div class="ant-card-head">
+          <div class="ant-card-head-wrapper">
+            <div class="ant-card-head-title">日志输出</div>
+          </div>
+        </div>
+        <div class="ant-card-body" id="log"></div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

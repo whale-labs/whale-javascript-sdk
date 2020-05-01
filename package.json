@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "test": "jest",
-    "cover": "jest --coverage"
+    "cover": "jest --coverage",
+    "start": "cd exapmle && npm run satrt"
   },
   "repository": {
     "type": "git",

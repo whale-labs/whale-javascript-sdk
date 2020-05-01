@@ -23,7 +23,24 @@ export default [
         plugins: [terser()],
       },
       {
+        file: "./example/src/sdk/WhaleAgent_JS.min.js", // UMD
+        format: "umd",
+        name: "WhaleAgent",
+        freeze: false,
+        plugins: [terser()],
+      },
+      {
         file: "./dist/WhaleAgent_JS.es6.min.js", // ES Module
+        format: "es",
+        name: "WhaleAgent",
+        plugins: [
+          terser({
+            module: true,
+          }),
+        ],
+      },
+      {
+        file: "./example/src/sdk/WhaleAgent_JS.es6.min.js", // ES Module
         format: "es",
         name: "WhaleAgent",
         plugins: [
