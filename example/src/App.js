@@ -31,12 +31,13 @@ import WhaleAgent from "./sdk/WhaleAgent_JS.es6.min";
 console.log(WhaleAgent);
 
 WhaleAgent.init({
-  appkey: "whaledemo", //APPKEY
+  appkey: "77a52s552c892bn442v722", //APPKEY
   debugMode: 2,
-  uploadURL: "http://localhost:3001/graphql",
+  uploadURL: "http://localhost:3300/graphql",
   name: "WhaleAgent",
   auto: true,
   autoTrack: true,
+  sendType: "post",
 });
 
 class App extends Component {
