@@ -94,6 +94,7 @@ CheckField.prototype.isUrl = function (URL) {
     return true;
   } else {
     baseConfig.status.errorCode = "60006";
+    console.error(`uploadURL校验失败：${URL}`);
     return false;
   }
 };
