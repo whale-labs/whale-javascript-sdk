@@ -109,8 +109,8 @@ function xmlhttp(_this) {
   };
   try {
     xhr.open(_this.type, _this.url, true);
-    // xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     if (_this.type === "GET") {
       xhr.send(null);
@@ -158,7 +158,6 @@ ajax.prototype.get = function (option) {
   xmlhttp(this);
 };
 ajax.prototype.post = function (option) {
-  console.log(option, "option");
   this.url = option.url;
   this.data = option.data;
   this.type = "POST";
