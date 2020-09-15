@@ -1,5 +1,5 @@
 {
-  "name": "@whale/whale-javascript-sdk",
+  "name": "@whale-labs/whale-javascript-sdk",
   "version": "1.0.0",
   "description": "whale javascript sdk",
   "main": "./dist/index.js",
